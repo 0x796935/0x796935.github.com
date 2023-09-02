@@ -5,19 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>File Upload</title>
   <style>
+    * {
+      font-family: sans-serif;
+      color: #eee;
+      background-color: #222;
+    }
     body {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
+      color: #333
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h4 {
+      margin: 0;
+    }
+    #fileStatus {
+      color: #aaa;
+      /* center text horizontally */
+      text-align: center;
+    }
+    #download { 
+      /* font size 24px */
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
-  <input type="file" id="fileInput" onchange="checkFileExtension()">
-  <br>
-  <h1 id="downloadLink"></h1>
+  <div>
+    <h1>Achievements restorer</h1>
+    <br />
+    <input type="file" id="fileInput" onchange="checkFileExtension()">
+    <br />
+    <h4 id="fileStatus"></h4>
+  </div>
   <script src="/script.js"></script>
   <script src="/jszip.min.js"></script>
   <script src="/pako.js"></script>
