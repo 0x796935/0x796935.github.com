@@ -102,7 +102,7 @@ async function checkFileExtension() {
       // console
       console.log(`Found and changed ${levelDatFilesByteArray.length} level.dat files in the .zip file`);
       console.log(`The first level.dat file is:`)
-      console.log(levelDatFilesByteArray[0].inflated);
+      // console.log(levelDatFilesByteArray[0].inflated); // Sometimes it can't find inflated
       // html
       fileStatus.innerHTML += `Found and changed ${levelDatFilesByteArray.length} level.dat files in the .zip file<br>`;
 
