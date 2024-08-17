@@ -107,7 +107,7 @@ async function checkFileExtension() {
       fileStatus.innerHTML += `Found and changed ${levelDatFilesByteArray.length} level.dat files in the .zip file<br>`;
 
     } catch (error) {
-      fileStatus += 'Error reading the .zip file<br>';
+      fileStatus.innerHTML += 'Error reading the .zip file<br>';
       console.error('Error reading the .zip file:');
       console.log(error);
       return "Error reading the .zip file";
