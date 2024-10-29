@@ -1,54 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Factorio Achievement restore</title>
-  <style>
-    * {
-      font-family: sans-serif;
-      color: #eee;
-      background-color: #222;
-    }
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      color: #333
-    }
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h4 {
-      margin: 0;
-    }
-    #fileStatus {
-      color: #aaa;
-      /* center text horizontally */
-      text-align: center;
-    }
-    #download { 
-      /* font size 24px */
-      font-size: 24px;
-    }
-  </style>
-</head>
-<body>
-  <div>
-    <h1>Achievements restorer</h1>
-    <br />
-    <h3 style="color:red">Warning only works once! (no clue why, dont ask me)</h3>
-    <br />
-    <input type="file" id="fileInput" onchange="checkFileExtension()">
-    <br />
-    <h4 id="fileStatus"></h4>
-  </div>
-  <script src="/script.js"></script>
-  <script src="/jszip.min.js"></script>
-  <script src="/pako.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Factorio Achievement Restorer</title>
+		<style>
+			* {
+				font-family: sans-serif;
+				color: #eee;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				position: relative;
+				overflow: hidden;
+			}
+			body::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-image: url("background.png");
+				background-size: cover;
+				filter: blur(5px);
+				z-index: 0;
+			}
+			div {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				z-index: 1;
+				background-color: rgba(34, 34, 34, 0.9);
+				padding: 20px;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			}
+			h1 {
+				margin-bottom: 10px;
+			}
+			h3 {
+				color: red;
+				margin-bottom: 20px;
+			}
+			h4 {
+				margin: 0;
+			}
+			#fileStatus {
+				color: #aaa;
+				text-align: center;
+				margin-top: 10px;
+			}
+			p {
+				color: #ddd;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Achievements Restorer</h1>
+			<h3>Warning: This only works once! (No clue why, don't ask me)</h3>
+			<p
+				>This tool is designed to help you restore your Factorio achievements by
+				removing any cheat flags from your save game files.<br />Please note
+				that this process can only be performed once per save file, so use it
+				wisely!<br />All operations are conducted locally within your browser,
+				ensuring your data remains secure and private. Simply upload your save
+				file, and let the tool handle the rest!
+				<br />
+				<br />
+				Savegame Path:<br />
+				Windows: %AppData%\Factorio\saves<br />Linux: ~/.factorio/mods<br />Mac:
+				~/Library/Application Support/factorio/mods
+			</p>
+			<input type="file" id="fileInput" onchange="checkFileExtension()" />
+			<h4 id="fileStatus"></h4>
+		</div>
+		<script src="/script.js"></script>
+		<script src="/jszip.min.js"></script>
+		<script src="/pako.js"></script>
+	</body>
 </html>
